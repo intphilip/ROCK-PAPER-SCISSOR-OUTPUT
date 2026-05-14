@@ -1,0 +1,70 @@
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background: #1e293b;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 320px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    background: #334155;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+.score-box p { font-size: 0.7rem; margin: 0; color: #94a3b8; letter-spacing: 1px; }
+.score-box span { font-size: 2.5rem; font-weight: bold; color: #38bdf8; }
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.choice-btn {
+    font-size: 2.5rem;
+    background: #f8fafc;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.choice-btn:hover {
+    transform: translateY(-5px);
+    background: #e2e8f0;
+}
+
+.result-area p { margin: 5px 0; color: #cbd5e1; font-size: 0.9rem; }
+#winner-text { color: #fbbf24; margin-top: 1rem; min-height: 1.2em; }
+
+#reset-btn {
+    margin-top: 1.5rem;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#reset-btn:hover { opacity: 0.9; }
