@@ -3,10 +3,9 @@ let computerScore = 0;
 
 function playGame(playerChoice) {
     const choices = ['rock', 'paper', 'scissors'];
-    // Randomly pick 0, 1, or 2 from the array
     const computerChoice = choices[Math.floor(Math.random() * 3)];
     
-    // Update the Move text on screen
+    // UI Update: Moves
     document.getElementById('user-move').innerText = `Your Move: ${playerChoice.toUpperCase()}`;
     document.getElementById('computer-move').innerText = `Computer Move: ${computerChoice.toUpperCase()}`;
     
@@ -20,17 +19,29 @@ function playGame(playerChoice) {
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
-        result = "YOU WIN! 🏆";
+        result = "YOU WIN THIS ROUND! 🏆";
         playerScore++;
     } else {
-        result = "YOU LOSE! 💀";
+        result = "YOU LOSE THIS ROUND! 💀";
         computerScore++;
     }
 
-    // Update the UI with final results and scores
+    // UI Update: Round Result & Scores
     document.getElementById('winner-text').innerText = result;
     document.getElementById('player-score').innerText = playerScore;
     document.getElementById('comp-score').innerText = computerScore;
+
+    // Best of 5 Logic (First to 3 Wins)
+    // We use a tiny delay so the UI updates before the popup appears
+    setTimeout(() => {
+        if (playerScore === 3) {
+            alert("SERIES OVER: You are the Champion! 🏆✨");
+            resetGame();
+        } else if (computerScore === 3) {
+            alert("SERIES OVER: The Computer wins! 🤖❌");
+            resetGame();
+        }
+    }, 100);
 }
 
 function resetGame() {

@@ -45,7 +45,7 @@ body {
     width: 75px;
     height: 75px;
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+    transition: all 0.2s ease;
 }
 
 .choice-btn:hover {
@@ -53,18 +53,23 @@ body {
     background: #e2e8f0;
 }
 
+.choice-btn:active {
+    transform: scale(0.9);
+}
+
 .result-area p { margin: 5px 0; color: #cbd5e1; font-size: 0.9rem; }
-#winner-text { color: #fbbf24; margin-top: 1rem; min-height: 1.2em; }
+#winner-text { color: #fbbf24; margin-top: 1rem; min-height: 1.5em; font-size: 1.2rem; }
 
 #reset-btn {
     margin-top: 1.5rem;
-    background: #ef4444;
+    background: #475569;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
-#reset-btn:hover { opacity: 0.9; }
+#reset-btn:hover { background: #ef4444; }
