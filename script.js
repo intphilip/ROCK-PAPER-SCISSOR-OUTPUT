@@ -4,11 +4,11 @@ let computerScore = 0;
 function playGame(playerChoice) {
     const choices = ['rock', 'paper', 'scissors'];
     const computerChoice = choices[Math.floor(Math.random() * 3)];
-    
+
     // UI Update: Moves
     document.getElementById('user-move').innerText = `Your Move: ${playerChoice.toUpperCase()}`;
     document.getElementById('computer-move').innerText = `Computer Move: ${computerChoice.toUpperCase()}`;
-    
+
     let result = "";
 
     // Win/Loss/Draw Logic
@@ -34,10 +34,10 @@ function playGame(playerChoice) {
     // Best of 5 Logic (First to 3 Wins)
     // We use a tiny delay so the UI updates before the popup appears
     setTimeout(() => {
-        if (playerScore === 3) {
+        if (playerScore === 5) {
             alert("SERIES OVER: You are the Champion! 🏆✨");
             resetGame();
-        } else if (computerScore === 3) {
+        } else if (computerScore === 5) {
             alert("SERIES OVER: The Computer wins! 🤖❌");
             resetGame();
         }
